@@ -24,14 +24,14 @@ OS_CURRENT="$(shell uname -s)"
 # MP_CC is not defined
 # MP_CPPC is not defined
 # MP_BC is not defined
-MP_AS="C:\Program Files\Microchip\xc8\v2.46\pic-as\bin\pic-as.exe"
-MP_LD="C:\Program Files\Microchip\xc8\v2.46\pic-as\bin\pic-as.exe"
+MP_AS="C:\Program Files\Microchip\xc8\v2.50\pic-as\bin\pic-as.exe"
+MP_LD="C:\Program Files\Microchip\xc8\v2.50\pic-as\bin\pic-as.exe"
 # MP_AR is not defined
 DEP_GEN=${MP_JAVA_PATH}java -jar "C:/Program Files/Microchip/MPLABX/v6.20/mplab_platform/platform/../mplab_ide/modules/../../bin/extractobjectdependencies.jar"
 # MP_CC_DIR is not defined
 # MP_CPPC_DIR is not defined
 # MP_BC_DIR is not defined
-MP_AS_DIR="C:\Program Files\Microchip\xc8\v2.46\pic-as\bin"
-MP_LD_DIR="C:\Program Files\Microchip\xc8\v2.46\pic-as\bin"
+MP_AS_DIR="C:\Program Files\Microchip\xc8\v2.50\pic-as\bin"
+MP_LD_DIR="C:\Program Files\Microchip\xc8\v2.50\pic-as\bin"
 # MP_AR_DIR is not defined
 DFP_DIR=C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159
