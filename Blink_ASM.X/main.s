@@ -67,24 +67,24 @@
 // config statements should precede project file includes.
 #include <xc.inc>
   
-GLOBAL max              ;make this global so it is watchable when debugging
+GLOBAL led              ; Hacer que `led` sea global para que pueda ser monitoreado durante la depuración
  
 ;objects in common (Access bank) memory 
 PSECT udata_acs
-max:
-    DS         1        ;reserve 1 byte for max
-tmp:
-    DS         1        ;1 byte for tmp
+led:
+    DS	       1
 
-
-PSECT resetVector, local, class = CODE, reloc = 2 ; PIC18
+; Esto debe enlazarse al vector de reinicio
+PSECT resetVec, class = CODE, reloc = 2 ; PIC18
+resetVec:
+    goto main
  
 PSECT code
 
-_start:
+main:
 
     ; Configurar TRISA como salida (poner el bit 0 de TRISA en 0)
-    BANKSEL TRISA       ; Seleccionar el banco de TRISA
+    BANKSEL TRISA		  ; Seleccionar el banco de TRISA
     clrf BANKMASK(PORTA)          ; Apagar todos los pines de PORTA
     bcf BANKMASK(TRISA), 0        ; RA0 como salida
 

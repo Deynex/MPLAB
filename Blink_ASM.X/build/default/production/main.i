@@ -5509,21 +5509,21 @@ ENDM
 # 68 "main.s" 2
 
 
-GLOBAL max ;make this global so it is watchable when debugging
+GLOBAL led ; Hacer que `led` sea global para que pueda ser monitoreado durante la depuración
 
 ;objects in common (Access bank) memory
 PSECT udata_acs
-max:
-    DS 1 ;reserve 1 byte for max
-tmp:
-    DS 1 ;1 byte for tmp
+led:
+    DS 1
 
-
-PSECT resetVector, local, class = CODE, reloc = 2 ; PIC18
+; Esto debe enlazarse al vector de reinicio
+PSECT resetVec, class = CODE, reloc = 2 ; PIC18
+resetVec:
+    goto main
 
 PSECT code
 
-_start:
+main:
 
     ; Configurar TRISA como salida (poner el bit 0 de TRISA en 0)
     BANKSEL TRISA ; Seleccionar el banco de TRISA

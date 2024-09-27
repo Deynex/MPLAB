@@ -1,6 +1,6 @@
-max 0 0 COMRAM 1
+led 0 0 COMRAM 1
 __S0 8000 0 ABS 0
-__S1 2 0 ABS 0
+__S1 1 0 ABS 0
 __S3 0 0 ABS 0
 __Hudata_bank4 0 0 ABS 0
 __Ludata_bank4 0 0 ABS 0
@@ -11,6 +11,8 @@ __Ludata_acs 0 0 ABS 0
 isa$xinst 0 0 ABS 0
 __Hudata_bank5 0 0 ABS 0
 __Ludata_bank5 0 0 ABS 0
+__HresetVec 0 0 ABS 0
+__LresetVec 0 0 ABS 0
 __Hcode 0 0 ABS 0
 __Lcode 0 0 ABS 0
 __Hdata 0 0 ABS 0
@@ -30,7 +32,7 @@ __Hudata_bank1 0 0 ABS 0
 __Ludata_bank1 0 0 ABS 0
 __Hspace_0 8000 0 ABS 0
 __Lspace_0 0 0 ABS 0
-__Hspace_1 2 0 ABS 0
+__Hspace_1 1 0 ABS 0
 __Lspace_1 0 0 ABS 0
 __Hudata_bank7 0 0 ABS 0
 __Ludata_bank7 0 0 ABS 0
@@ -43,8 +45,9 @@ __Ludata_bank2 0 0 ABS 0
 __Hudata_bank3 0 0 ABS 0
 __Ludata_bank3 0 0 ABS 0
 %segments
-udata_acs 0 1 COMRAM 0 1
+udata_acs 0 0 COMRAM 0 1
 code 7FD8 7FFF CODE 7FD8 0
+resetVec 7FD4 7FD7 CODE 7FD4 0
 %locals
 build/default/production/main.o
 main.s
@@ -63,3 +66,5 @@ main.s
 110 7FF8 0 CODE 0
 111 7FFA 0 CODE 0
 112 7FFE 0 CODE 0
+main.s
+80 7FD4 0 CODE 0

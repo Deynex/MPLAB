@@ -12,8 +12,9 @@
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
 $build/default/production/main.o
+resetVec CODE 0 7FD4 7FD4 4 1 2
 code CODE 0 7FD8 7FD8 28 1 2
-udata_acs COMRAM 1 0 0 2 1 1
+udata_acs COMRAM 1 0 0 1 1 1
 config CONFIG 4 300000 300000 E 1 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -31,15 +32,15 @@ BANK4 400-4FF 1
 BANK5 500-5FF 1
 BANK6 600-6FF 1
 BANK7 700-7FF 1
-CONST 0-7FD7 1
+CONST 0-7FD3 1
 IDLOC 200000-200007 1
-SMALLCONST 800-7FD7 1
-CODE 0-7FD7 1
+SMALLCONST 800-7FD3 1
+CODE 0-7FD3 1
 BIGRAM 0-7FF 1
 BIGSFR F60-FFF 1
-COMRAM 2-5F 1
+COMRAM 1-5F 1
 EEDATA F00000-F000FF 1
-MEDIUMCONST 800-7FD7 1
+MEDIUMCONST 800-7FD3 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -54,6 +55,7 @@ MEDIUMCONST 800-7FD7 1
 # All other numeric values are in decimal.
 %LINETAB
 $build/default/production/main.o
+7FD4 resetVec CODE >80:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
 7FD8 code CODE >87:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
 7FDA code CODE >88:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
 7FDC code CODE >89:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
@@ -82,7 +84,7 @@ $build/default/production/main.o
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 __Hspace_0 8000 0 ABS 0 - -
-__Hspace_1 2 0 ABS 0 - -
+__Hspace_1 1 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 60000E 0 ABS 0 - -
 __Hudata_bank0 0 0 ABS 0 udata_bank0 -
@@ -93,8 +95,10 @@ __Hudata_bank4 0 0 ABS 0 udata_bank4 -
 __Hudata_bank5 0 0 ABS 0 udata_bank5 -
 __Hudata_bank6 0 0 ABS 0 udata_bank6 -
 __Hudata_bank7 0 0 ABS 0 udata_bank7 -
-max 0 0 COMRAM 1 udata_acs build/default/production/main.o
+led 0 0 COMRAM 1 udata_acs build/default/production/main.o
 __L__absolute__ 0 0 ABS 0 __absolute__ -
+__LresetVec 0 0 ABS 0 resetVec -
+__HresetVec 0 0 ABS 0 resetVec -
 isa$xinst 0 0 ABS 0 - build/default/production/main.o
 __Hedata 0 0 ABS 0 edata -
 __Hudata 0 0 ABS 0 udata -
@@ -106,7 +110,7 @@ __Hdata 0 0 ABS 0 data -
 __Lcode 0 0 ABS 0 code -
 __Ldata 0 0 ABS 0 data -
 __S0 8000 0 ABS 0 - -
-__S1 2 0 ABS 0 - -
+__S1 1 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __Lconfig 0 0 CONFIG 4 config -
 isa$std 1 0 ABS 0 - build/default/production/main.o
@@ -149,8 +153,9 @@ __Ludata_acs 0 0 ABS 0 udata_acs -
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
+resetVec 0 7FD4 7FD4 4 1
 code 0 7FD8 7FD8 28 1
-udata_acs 1 0 0 2 1
+udata_acs 1 0 0 1 1
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal
