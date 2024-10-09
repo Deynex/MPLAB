@@ -12,8 +12,8 @@
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
 $build/default/production/main.o
-resetVec CODE 0 7FD4 7FD4 4 1 2
-code CODE 0 7FD8 7FD8 28 1 2
+resetVec CODE 0 7FD6 7FD6 4 1 2
+code CODE 0 7FDA 7FDA 26 1 2
 udata_acs COMRAM 1 0 0 1 1 1
 config CONFIG 4 300000 300000 E 1 1
 # %UNUSED Section
@@ -32,15 +32,15 @@ BANK4 400-4FF 1
 BANK5 500-5FF 1
 BANK6 600-6FF 1
 BANK7 700-7FF 1
-CONST 0-7FD3 1
+CONST 0-7FD5 1
 IDLOC 200000-200007 1
-SMALLCONST 800-7FD3 1
-CODE 0-7FD3 1
+SMALLCONST 800-7FD5 1
+CODE 0-7FD5 1
 BIGRAM 0-7FF 1
 BIGSFR F60-FFF 1
 COMRAM 1-5F 1
 EEDATA F00000-F000FF 1
-MEDIUMCONST 800-7FD3 1
+MEDIUMCONST 800-7FD5 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -55,22 +55,21 @@ MEDIUMCONST 800-7FD3 1
 # All other numeric values are in decimal.
 %LINETAB
 $build/default/production/main.o
-7FD4 resetVec CODE >80:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
-7FD8 code CODE >87:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
-7FDA code CODE >88:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
-7FDC code CODE >89:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
-7FDE code CODE >93:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
-7FE0 code CODE >94:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
-7FE4 code CODE >97:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
-7FE6 code CODE >98:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
-7FEA code CODE >100:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
-7FEE code CODE >104:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
-7FF0 code CODE >106:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
-7FF2 code CODE >108:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
-7FF4 code CODE >109:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
-7FF8 code CODE >110:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
-7FFA code CODE >111:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
-7FFE code CODE >112:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
+7FD6 resetVec CODE >80:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
+7FDA code CODE >87:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
+7FDC code CODE >88:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
+7FDE code CODE >89:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
+7FE0 code CODE >93:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
+7FE2 code CODE >94:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
+7FE6 code CODE >97:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
+7FE8 code CODE >98:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
+7FEC code CODE >100:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
+7FF0 code CODE >104:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
+7FF2 code CODE >106:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
+7FF4 code CODE >108:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
+7FF6 code CODE >109:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
+7FFA code CODE >110:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
+7FFC code CODE >111:C:\Users\infin\Desktop\GitHub\MPLAB\Blink_ASM.X\main.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -153,8 +152,8 @@ __Ludata_acs 0 0 ABS 0 udata_acs -
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-resetVec 0 7FD4 7FD4 4 1
-code 0 7FD8 7FD8 28 1
+resetVec 0 7FD6 7FD6 4 1
+code 0 7FDA 7FDA 26 1
 udata_acs 1 0 0 1 1
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section

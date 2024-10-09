@@ -67,7 +67,7 @@
 // config statements should precede project file includes.
 #include <xc.inc>
   
-GLOBAL led              ; Hacer que `led` sea global para que pueda ser monitoreado durante la depuración
+GLOBAL led                      ; Hacer que `led` sea global para que pueda ser monitoreado durante la depuración
  
 ;objects in common (Access bank) memory 
 PSECT udata_acs
@@ -84,29 +84,30 @@ PSECT code
 main:
 
     ; Configurar TRISA como salida (poner el bit 0 de TRISA en 0)
-    BANKSEL TRISA		  ; Seleccionar el banco de TRISA
-    clrf BANKMASK(PORTA)          ; Apagar todos los pines de PORTA
-    bcf BANKMASK(TRISA), 0        ; RA0 como salida
+    BANKSEL TRISA		     ; Seleccionar el banco de TRISA
+    clrf BANKMASK(PORTA), a          ; Apagar todos los pines de PORTA
+    bcf BANKMASK(TRISA), 1, a        ; RA0 como salida
 
 blink:
     ; Encender LED (RA0)
-    bsf BANKMASK(PORTA), 0        ; Poner RA0 en alto (encender LED)
+    bsf BANKMASK(PORTA), 0, a        ; Poner RA0 en alto (encender LED)
     call delay
 
     ; Apagar LED (RA0)
-    bcf BANKMASK(PORTA), 0        ; Poner RA0 en bajo (apagar LED)
+    bcf BANKMASK(PORTA), 0, a        ; Poner RA0 en bajo (apagar LED)
     call delay
 
-    goto blink                    ; Repetir el bucle
+    goto blink                       ; Repetir el bucle
 
 ; Subrutina de retardo (ajusta los ciclos según tu necesidad)
 delay:
-    movlw 0xFF                    ; Carga 255 en WREG (valor máximo)
+    movlw 0xFF                       ; Carga 255 en WREG (valor máximo)
 delay_loop1:
-    movwf 0x20                    ; Carga el valor en un registro de trabajo
+    movwf 0x20, a                    ; Carga el valor en un registro de trabajo
 delay_loop2:
-    decfsz 0x20, f                ; Decrementar el registro hasta llegar a 0
-    goto delay_loop2              ; Si no es 0, sigue decrementando
-    decfsz WREG, f                ; Decrementa WREG
-    goto delay_loop1              ; Si no es 0, sigue el ciclo
-    return
+    decfsz 0x20, f, a                ; Decrementar el registro hasta llegar a 0
+    goto delay_loop2                 ; Si no es 0, sigue decrementando
+    decfsz WREG, f, a                ; Decrementa WREG
+    goto delay_loop1                 ; Si no es 0, sigue el ciclo
+    
+    END resetVec

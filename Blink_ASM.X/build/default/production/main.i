@@ -5527,16 +5527,16 @@ main:
 
     ; Configurar TRISA como salida (poner el bit 0 de TRISA en 0)
     BANKSEL TRISA ; Seleccionar el banco de TRISA
-    clrf ((PORTA) and 0FFh) ; Apagar todos los pines de PORTA
-    bcf ((TRISA) and 0FFh), 0 ; ((PORTA) and 0FFh), 0, a como salida
+    clrf ((PORTA) and 0FFh), a ; Apagar todos los pines de PORTA
+    bcf ((TRISA) and 0FFh), 1, a ; ((PORTA) and 0FFh), 0, a como salida
 
 blink:
     ; Encender LED (((PORTA) and 0FFh), 0, a)
-    bsf ((PORTA) and 0FFh), 0 ; Poner ((PORTA) and 0FFh), 0, a en alto (encender LED)
+    bsf ((PORTA) and 0FFh), 0, a ; Poner ((PORTA) and 0FFh), 0, a en alto (encender LED)
     call delay
 
     ; Apagar LED (((PORTA) and 0FFh), 0, a)
-    bcf ((PORTA) and 0FFh), 0 ; Poner ((PORTA) and 0FFh), 0, a en bajo (apagar LED)
+    bcf ((PORTA) and 0FFh), 0, a ; Poner ((PORTA) and 0FFh), 0, a en bajo (apagar LED)
     call delay
 
     goto blink ; Repetir el bucle
@@ -5545,10 +5545,11 @@ blink:
 delay:
     movlw 0xFF ; Carga 255 en WREG (valor máximo)
 delay_loop1:
-    movwf 0x20 ; Carga el valor en un registro de trabajo
+    movwf 0x20, a ; Carga el valor en un registro de trabajo
 delay_loop2:
-    decfsz 0x20, f ; Decrementar el registro hasta llegar a 0
+    decfsz 0x20, f, a ; Decrementar el registro hasta llegar a 0
     goto delay_loop2 ; Si no es 0, sigue decrementando
-    decfsz WREG, f ; Decrementa WREG
+    decfsz WREG, f, a ; Decrementa WREG
     goto delay_loop1 ; Si no es 0, sigue el ciclo
-    return
+
+    END resetVec

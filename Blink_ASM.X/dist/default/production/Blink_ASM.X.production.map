@@ -6,7 +6,7 @@ Linker command line:
   --edf=C:\Program Files\Microchip\xc8\v2.50\pic\dat\20240725155939_en.msgs \
   -cs -h+dist/default/production\Blink_ASM.X.production.sym \
   --cmf=dist/default/production\Blink_ASM.X.production.cmf -z -Q18F4550 \
-  -oC:\Users\infin\AppData\Local\Temp\xcAs5p4.\driver_tmp_3.o \
+  -oC:\Users\infin\AppData\Local\Temp\xcAseko.\driver_tmp_3.o \
   --fixupoverflow=error -ver=XC8 PIC(R) Assembler --fixupoverflow=lstwarn \
   -Mdist/default/production/Blink_ASM.X.production.map -E1 --acfsm=1493 \
   -ACODE=00h-07FFFh -ACONST=00h-07FFFh -ASMALLCONST=0800h-08FFhx120 \
@@ -27,14 +27,14 @@ Machine type is 18F4550
                 Name                               Link     Load   Length Selector   Space Scale
 build/default/production/main.o
                 config                           300000   300000        E        0       4
-                resetVec                           7FD4     7FD4        4     3FEA       0
-                code                               7FD8     7FD8       28     3FEC       0
+                resetVec                           7FD6     7FD6        4     3FEB       0
+                code                               7FDA     7FDA       26     3FED       0
                 udata_acs                             0        0        1        0       1
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   CODE           
-                resetVec                           7FD4     7FD4        4         0
-                code                               7FD8     7FD8       28         0
+                resetVec                           7FD6     7FD6        4         0
+                code                               7FDA     7FDA       26         0
 
         CLASS   CONST          
 
@@ -83,8 +83,8 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 udata_acs                      000000  000001  000001         0       1  COMRAM  
-                resetVec                       007FD4  000004  007FD8      3FEA       0  CODE    
-                code                           007FD8  000028  008000      3FEC       0  CODE    
+                resetVec                       007FD6  000004  007FDA      3FEB       0  CODE    
+                code                           007FDA  000026  008000      3FED       0  CODE    
 
 
 UNUSED ADDRESS RANGES
@@ -100,15 +100,15 @@ UNUSED ADDRESS RANGES
         BANK7            000700-0007FF              100
         BIGRAM           000000-0007FF              800
         BIGSFR           000F60-000FFF               A0
-        CODE             000000-007FD3             7FD4
+        CODE             000000-007FD5             7FD6
         COMRAM           000001-00005F               5F
-        CONST            000000-007FD3             7FD4
+        CONST            000000-007FD5             7FD6
         EEDATA           F00000-F000FF              100
         IDLOC            200000-200007                8
-        MEDIUMCONST      000800-007FD3             77D4
+        MEDIUMCONST      000800-007FD5             77D6
         RAM              000060-0007FF              100
         SFR              000F60-000FFF               A0
-        SMALLCONST       000800-007FD3              100
+        SMALLCONST       000800-007FD5              100
 
                                   Symbol Table
 
